@@ -61,11 +61,11 @@ public class RxConfig {
         }
     }
 
-    public static Single<Task<Void>> fetch() {
+    public Single<Task<Void>> fetch() {
         return fetch(DEFAULT_CACHE_TIME_SEC);
     }
 
-    public static Single<Task<Void>> fetch(final long cacheExpiredTime) {
+    public Single<Task<Void>> fetch(final long cacheExpiredTime) {
         return Single.create(new SingleOnSubscribe<Task<Void>>() {
             @Override
             public void subscribe(final SingleEmitter<Task<Void>> emitter) throws Exception {
@@ -85,7 +85,7 @@ public class RxConfig {
         });
     }
 
-    public static Single<List<Config<String>>> getValues(final Context context) {
+    public Single<List<Config<String>>> getValues(final Context context) {
         return fetch().map(new Function<Task<Void>, List<Config<String>>>() {
             @Override
             public List<Config<String>> apply(final Task<Void> task) throws Exception {
@@ -103,7 +103,7 @@ public class RxConfig {
         });
     }
 
-    public static Single<Config<String>> getString(final Context context, final String key) {
+    public Single<Config<String>> getString(final Context context, final String key) {
         return fetch().map(new Function<Task<Void>, Config<String>>() {
             @Override
             public Config<String> apply(final Task<Void> task) throws Exception {
@@ -120,7 +120,7 @@ public class RxConfig {
         });
     }
 
-    public static <T> Completable applyConfig(final Context context, final Config<T> config) {
+    public <T> Completable applyConfig(final Context context, final Config<T> config) {
         return Completable.create(new CompletableOnSubscribe() {
             @Override
             public void subscribe(final CompletableEmitter emitter) throws Exception {
@@ -140,7 +140,7 @@ public class RxConfig {
                 .getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
 
-    private static FirebaseRemoteConfig getRemoteConfig() {
+    protected FirebaseRemoteConfig getRemoteConfig() {
         FirebaseRemoteConfig firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setConfigSettings(
                 new FirebaseRemoteConfigSettings.Builder().setDeveloperModeEnabled(false).build());

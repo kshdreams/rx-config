@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private SimpleArrayAdapter<RxConfig.Config<String>> mAdapter;
     private FloatingActionButton mFab;
 
+    private RxConfig mRxConfig = new RxConfig();
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 for (RxConfig.Config<String> config : items) {
-                    RxConfig.applyConfig(MainActivity.this, config).subscribe();
+                    mRxConfig.applyConfig(MainActivity.this, config).subscribe();
                 }
 
                 loadValues();
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadValues() {
-        RxConfig.getValues(MainActivity.this)
+        mRxConfig.getValues(MainActivity.this)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<List<Config<String>>>() {
