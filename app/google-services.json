@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "870367959509",
+    "firebase_url": "https://fir-demo-e1781.firebaseio.com",
+    "project_id": "fir-demo-e1781",
+    "storage_bucket": "fir-demo-e1781.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870367959509:android:880ecdd8294cf6fa",
+        "android_client_info": {
+          "package_name": "com.android.sebiya.firebase.remoteconfig.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870367959509-s1rk5ac4thkj02f9rhsg3d5u095tqh71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWk2_QWBVvy_An_HTFq35JVpNfs5oaEvQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
