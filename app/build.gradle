@@ -4,7 +4,7 @@ android {
     compileSdkVersion compileAndTargetSdk
     defaultConfig {
         applicationId "com.android.sebiya.firebase.remoteconfig.sample"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion compileAndTargetSdk
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ dependencies {
     implementation "com.google.firebase:firebase-core:$firebaseVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
 
-    implementation "com.github.kshdreams:SimpleArrayAdapter:0.1"
+    implementation "com.github.kshdreams:SimpleArrayAdapter:0.1.3"
 
     implementation project(':library')
 
